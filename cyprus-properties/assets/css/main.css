@@ -9055,7 +9055,7 @@ START: About CSS
   /* height: 100%; */
   position: relative;
   border-radius: 12px;
-  /* height: 600px; */
+  height: 550px;
 }
 .about-img-area .about-img img {
   width: 100%;
@@ -25615,7 +25615,7 @@ START: Home 9 About CSS
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
