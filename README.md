@@ -19,7 +19,7 @@ A folder called `cyprus-properties/` with an `index.html` inside will be live at
 ```
 /
 ├── api/
-│   └── lead.mjs             ← Lead form handler (shared by all pages — don't edit)
+│   └── lead.js              ← Lead form handler (shared by all pages — don't edit)
 ├── thank-you.html           ← Shared fallback thank-you page (don't edit)
 ├── cyprus-properties/       ← Campaign folder
 │   ├── index.html
