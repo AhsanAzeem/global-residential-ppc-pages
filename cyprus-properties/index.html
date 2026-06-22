@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -125,10 +126,10 @@
                   </div>
                 </div>
                 <div class="h9-about-content h11-about-content">
-                  <div class="sec-heading style-3 h9-sec-heading h11-sec-heading mb-3">
+                  <div class="sec-heading style-2 style-7 h9-sec-heading h11-sec-heading mb-3">
                     <!-- <span class="sub-title wow fadeInUp" data-wow-delay=".3s"><img src="assets/images/favicon.webp" alt="" style="width: 15px;">About our
                       company</span> -->
-                      <h2 class="sec-title text-anim tp-section-ai-title wow fadeInUp" data-wow-delay=".3s">International Property Investment Backed By Trusted Expertise</h2>
+                      <h2 class="sec-title title-highlight wow fadeInUp" data-wow-delay=".3s">International Property Investment Backed By Trusted Expertise</h2>
                     </div>
                     <div class="h11-about-funfact wow fadeInUp" data-wow-delay=".6s">
                       <div class="countup-item style-2">
@@ -189,7 +190,7 @@
             <div class="row">
               <div class="col-12">
                 <div class="sec-heading style-3 text-center mb-0">
-                  <h2 class="sec-title text-anim tp-section-ai-title">Featured Properties in Cyprus</h2>
+                  <h2 class="sec-title title-anim">Featured Properties in Cyprus</h2>
                 </div>
               </div>
             </div>
@@ -331,7 +332,7 @@
               <div class="col-12">
                 <div class="sec-heading style-3 text-center">
                   <!-- <span class="sub-title wow fadeInUp" data-wow-delay=".3s"><img src="assets/images/favicon.webp" alt="" style="width: 15px;">Why Choose Us</span> -->
-                  <h2 class="sec-title text-anim tp-section-ai-title">Why Middle East Investors Choose Global Residential</h2>
+                  <h2 class="sec-title title-anim">Why Middle East Investors Choose Global Residential</h2>
                 </div>
               </div>
             </div>
@@ -412,6 +413,7 @@
                 </div>
               </div>
               
+              
             </div>
           </div>
         </section>
@@ -433,7 +435,7 @@
                 <div class="sec-heading style-2 style-7 h9-sec-heading h11-sec-heading mb-3">
                   <!-- <span class="sub-title wow fadeInUp" data-wow-delay=".3s"><img src="assets/images/favicon.webp" alt="" style="width: 15px;">About our
                     company</span> -->
-                    <h2 class="sec-title text-anim tp-section-ai-title wow fadeInUp" data-wow-delay=".3s">Need Help? Start Here...</h2>
+                    <h2 class="sec-title title-highlight wow fadeInUp" data-wow-delay=".3s">Need Help? Start Here...</h2>
                   </div>
                   <div class="accordion tj-faq style-2" id="faqTwo">
                     <div class="accordion-item active wow fadeInUp" data-wow-delay=".3s">
@@ -490,6 +492,11 @@
           
           <!-- Contact Section -->
           <section class="footer-section one contact-section style-four pt-0">
+            <!-- <div class="anim-icons">
+              <div class="image-1">
+                <img src="assets/images/shape/section-bg-shape6.webp" alt="" loading="lazy" decoding="async">
+              </div>
+            </div> -->
             <div class="outer-box">
               <!-- <div class="bg bg-image" style="background-image: url(assets/images/shape/section-bg-shape13.png);"></div> -->
               <div class="container">
@@ -525,7 +532,9 @@
                         <div class="inner-column">
                           <h3 class="title mb-3 text-anim">Schedule a Consultation</h3>
                           <div class="contact-form wow fadeInUp" data-wow-delay=".1s">
-                            <form method="post" action="thankyou.php" class="contact__form">
+                            <form method="post" action="/api/lead" class="contact__form">
+                              <input type="hidden" name="campaign" value="Cyprus Properties">
+                              <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
                               <input type="hidden" name="leadsource" class="leadsource" value="">
                               <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                               <div class="row">
@@ -751,7 +760,9 @@
               <div class="inner-column">
                 <h3 class="title mb-4 text-anim">Book Your Appointment Now</h3>
                 <div class="contact-form">
-                  <form method="post" action="thankyou.php" class="contact__form">
+                  <form method="post" action="/api/lead" class="contact__form">
+                    <input type="hidden" name="campaign" value="Cyprus Properties">
+                    <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
                       <div class="form-input col-lg-6 col-md-6">
@@ -921,7 +932,7 @@
               <span id="sidebarLocation" class="gr-sidebar-location"><i class="tji-location"></i> Location</span>
             </div>
             <button id="sidebarCloseBtn" class="gr-sidebar-close" aria-label="Close sidebar">
-              <span>&times;</span>
+              &#x2715;
             </button>
           </div>
           <div class="gr-sidebar-body">
@@ -984,7 +995,7 @@
           <!-- Sidebar Footer / Call to Actions -->
           <div class="gr-sidebar-footer">
             <a id="sidebarWhatsappBtn" href="" class="gr-btn gr-btn-whatsapp" rel="noopener">
-              <img src="assets/images/icons/whatsapp-dark.webp" alt="" loading="lazy" style="width: 20px;"> WhatsApp
+              <img src="assets/images/icons/whatsapp-dark.webp" alt="" style="width: 20px;"> WhatsApp
             </a>
             <a id="sidebarConsultBtn" href="javascript:void(0)" class="gr-btn gr-btn-primary">
               Book Consultation
