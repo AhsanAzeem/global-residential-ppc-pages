@@ -11,6 +11,7 @@
 //   LEAD_TO          — recipient(s), comma-separated, e.g. "kelly.yeung@global-residential.com"
 //
 // Optional:
+//   LEAD_BCC         — BCC recipient(s), comma-separated, e.g. "david@example.com,bob@example.com"
 //   LEAD_REPLY_TO_FIELD — form field name to use as Reply-To (default: "email")
 //
 // REDIRECT BEHAVIOUR (after a successful send):
@@ -141,6 +142,15 @@ function resolveRedirect(body) {
   return DEFAULT_REDIRECT;
 }
 
+// Parse a comma-separated env var into an array of trimmed, non-empty strings.
+function parseEmailList(envValue) {
+  if (!envValue) return [];
+  return envValue
+    .split(",")
+    .map(function (s) { return s.trim(); })
+    .filter(Boolean);
+}
+
 module.exports = function handler(req, res) {
   // Only accept POST.
   if (req.method !== "POST") {
@@ -221,12 +231,8 @@ module.exports = function handler(req, res) {
   var subject = "Lead From Global Residential Landing Page" +
     (meta.campaign ? " — " + meta.campaign : "");
 
-  var toList = to
-    .split(",")
-    .map(function (s) {
-      return s.trim();
-    })
-    .filter(Boolean);
+  var toList = parseEmailList(to);
+  var bccList = parseEmailList(process.env.LEAD_BCC);
 
   var emailPayload = {
     from: from,
@@ -236,6 +242,7 @@ module.exports = function handler(req, res) {
     text: buildEmailText(fields, meta),
   };
   if (replyTo) emailPayload.reply_to = replyTo;
+  if (bccList.length > 0) emailPayload.bcc = bccList;
 
   // --- Send via Resend ---
   fetch(RESEND_ENDPOINT, {
