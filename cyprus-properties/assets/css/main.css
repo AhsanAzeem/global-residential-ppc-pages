@@ -2863,6 +2863,11 @@ START: Property Card Buttons - Unified Outline
   transition: opacity 0.4s ease;
 }
 
+.gr-lead-popup .iti {
+  display: block;
+  width: 100%;
+}
+
 .gr-lead-popup.active {
   display: flex;
   opacity: 1;
