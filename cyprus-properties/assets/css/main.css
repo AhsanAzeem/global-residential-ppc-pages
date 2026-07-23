@@ -2887,7 +2887,7 @@ START: Property Card Buttons - Unified Outline
   position: relative;
   z-index: 10001;
   width: 90%;
-  max-width: 800px;
+  max-width: 900px;
   background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);

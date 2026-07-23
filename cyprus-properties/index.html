@@ -1158,19 +1158,73 @@
                     <input type="hidden" name="campaign" value="Speak with our Cyprus Property Advisors Popup">
                     <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
-                    <div class="row row-gap-3">
-                      <div class="form-input col-lg-12" style="margin-bottom: 12px;">
+                    <div class="row">
+                      <!-- Full Name -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
                         <input type="text" name="full_name" placeholder="Full Name*" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32;">
                       </div>
-                      <div class="form-input col-lg-12" style="margin-bottom: 12px;">
+                      
+                      <!-- Email -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
                         <input type="email" name="email" placeholder="Email Address*" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32;">
                       </div>
-                      <div class="form-input col-lg-12" style="margin-bottom: 12px;">
+                      
+                      <!-- Phone Number -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
                         <input type="tel" id="phonePopup" name="phone_number" placeholder="Phone Number*" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32;">
                         <input type="hidden" name="full_phone_number" value="">
                         <div id="phone-error-popup" class="phone-error error" style="display: none; color: #ff3333; font-size: 12px; margin-top: 4px;">Please enter a valid phone number</div>
                       </div>
-                      <div class="form-input col-lg-12">
+                      
+                      <!-- Country of Residence -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
+                        <select name="country" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32; appearance: none; -webkit-appearance: none; background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a2b32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center; background-size: 14px;">
+                          <option value="">Country of Residence*</option>
+                          <option value="United Arab Emirates">United Arab Emirates</option>
+                          <option value="Saudi Arabia">Saudi Arabia</option>
+                          <option value="Kuwait">Kuwait</option>
+                          <option value="Qatar">Qatar</option>
+                          <option value="Bahrain">Bahrain</option>
+                          <option value="Oman">Oman</option>
+                          <option value="United Kingdom">United Kingdom</option>
+                          <option value="Germany">Germany</option>
+                          <option value="France">France</option>
+                          <option value="Cyprus">Cyprus</option>
+                          <option value="Greece">Greece</option>
+                          <option value="Russia">Russia</option>
+                          <option value="China">China</option>
+                          <option value="India">India</option>
+                          <option value="Pakistan">Pakistan</option>
+                          <option value="Lebanon">Lebanon</option>
+                          <option value="Jordan">Jordan</option>
+                          <option value="Egypt">Egypt</option>
+                          <option value="Nigeria">Nigeria</option>
+                          <option value="South Africa">South Africa</option>
+                          <option value="United States">United States</option>
+                          <option value="Canada">Canada</option>
+                          <option value="Australia">Australia</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      
+                      <!-- Investment Budget -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
+                        <input type="text" name="investment_budget" placeholder="Investment Budget*" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32;">
+                      </div>
+                      
+                      <!-- Interested Development -->
+                      <div class="form-input col-md-6 col-12" style="margin-bottom: 12px;">
+                        <select name="interested_development" required style="width: 100%; height: 50px; padding: 12px 16px; border: 1px solid #e1e7ea; border-radius: 6px; font-size: 14px; background-color: #f8fafb; color: #1a2b32; appearance: none; -webkit-appearance: none; background-image: url(&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231a2b32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E&quot;); background-repeat: no-repeat; background-position: right 16px center; background-size: 14px;">
+                          <option value="">Interested Development*</option>
+                          <option value="Harmony Villas">Harmony Villas</option>
+                          <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                          <option value="Elysia Blu">Elysia Blu</option>
+                          <option value="Not Sure Yet">Not Sure Yet</option>
+                        </select>
+                      </div>
+                      
+                      <!-- Submit Button -->
+                      <div class="form-input col-12" style="margin-top: 8px;">
                         <div class="submit-btn">
                           <button class="tj-primary-btn" type="submit" style="width: 100%; justify-content: center; height: 50px; background-color: var(--tj-color-theme-primary) !important; color: #fff !important; border: none; border-radius: 6px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">
                             <span class="btn-text"><span>Request Consultation</span></span>
