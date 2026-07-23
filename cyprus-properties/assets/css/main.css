@@ -716,12 +716,6 @@ START: Heading CSS
 /**----------------------------------------
 START: Choose CSS
 ----------------------------------------*/
-.tj-choose-section {
-  overflow: hidden;
-}
-.tj-choose-section .sec-heading {
-  max-width: 550px;
-}
 
 .choose-box {
   height: 100%;
@@ -748,11 +742,8 @@ START: Choose CSS
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  color: var(--tj-color-theme-primary);
-  font-size: 88px;
-  line-height: 1;
-  max-width: 88px;
-  margin-bottom: 43px;
+  width: 50px;
+  margin-bottom: 30px;
 }
 .choose-box .choose-icon i {
   line-height: 1;
@@ -979,7 +970,7 @@ START: About CSS
   margin-bottom: 0;
 }
 .tj-faq .accordion-item .faq-title {
-  font-size: 18px;
+  font-size: 19px;
   text-align: start;
   color: var(--tj-color-theme-dark);
   font-family: var(--tj-ff-heading);
@@ -1300,7 +1291,7 @@ START: Choose CSS
   overflow: hidden;
 }
 .tj-choose-section .sec-heading {
-  max-width: 550px;
+  max-width: 750px;
 }
 
 /* !END: Choose CSS */
@@ -2823,4 +2814,238 @@ START: Property Card Buttons - Unified Outline
 }
 .iti {
   width: 100% !important;
+}
+
+/* FAQ Custom Bullet Lists */
+.gr-faq-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 0 0;
+}
+.gr-faq-list li {
+  font-size: 14px;
+  color: #3f4e53;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.gr-faq-list li::before {
+  content: "✓";
+  color: #c9a84c;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  line-height: 1.25;
+}
+
+/* FAQ Button styling */
+.download-process-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px !important;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* Premium Quick Lead Popup Container */
+.gr-lead-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: none; /* Controlled by JS */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gr-lead-popup.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Glassmorphic Backdrop overlay */
+.gr-lead-popup-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 46, 53, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Popup card grid */
+.gr-lead-popup-container {
+  position: relative;
+  z-index: 10001;
+  width: 90%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gr-lead-popup.active .gr-lead-popup-container {
+  transform: scale(1);
+}
+
+.gr-lead-popup-card {
+  display: flex;
+  min-height: 400px;
+}
+
+/* Left Pane - Image */
+.gr-lead-popup-image-pane {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+/* Right Pane - Content */
+.gr-lead-popup-content-pane {
+  flex: 1.2;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gr-lead-popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #4a5b62;
+  cursor: pointer;
+  line-height: 1;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.gr-lead-popup-close:hover {
+  color: #1a2e35;
+}
+
+.gr-lead-popup-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #c9a84c;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.gr-lead-popup-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a2e35;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.gr-lead-popup-desc {
+  font-size: 14.5px;
+  color: #5d6f76;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.gr-lead-popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Independent Popup Button Styles */
+.gr-popup-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 14px 20px !important;
+  font-weight: 600;
+  font-size: 14.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.gr-popup-btn-call {
+  background: #1a2e35 !important;
+  color: #ffffff !important;
+  border: 1.5px solid #1a2e35 !important;
+}
+
+.gr-popup-btn-call:hover {
+  background: transparent !important;
+  color: #1a2e35 !important;
+}
+
+.gr-popup-btn-call i {
+  margin-right: 8px;
+}
+
+.gr-popup-btn-wa {
+  background: transparent !important;
+  color: #1a2e35 !important;
+  border: 1.5px solid #1a2e35 !important;
+}
+
+.gr-popup-btn-wa:hover {
+  background: #1a2e35 !important;
+  color: #ffffff !important;
+}
+
+.gr-popup-btn-wa:hover .gr-popup-wa-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .gr-lead-popup-image-pane {
+    display: none;
+  }
+  .gr-lead-popup-card {
+    min-height: auto;
+  }
+  .gr-lead-popup-content-pane {
+    padding: 40px 24px;
+  }
+  .gr-lead-popup-title {
+    font-size: 22px;
+  }
+  .gr-lead-popup-desc {
+    font-size: 13.5px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1350px;
+    }
+}
+
+/* Benefits Section WebP Icon Custom Sizing & Color Inversion Filters */
+.choose-box .choose-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: invert(74%) sepia(42%) saturate(675%) hue-rotate(11deg) brightness(91%) contrast(85%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.choose-box:hover .choose-icon img {
+  filter: brightness(0) invert(1) !important;
 }
