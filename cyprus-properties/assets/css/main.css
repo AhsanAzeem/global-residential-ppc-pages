@@ -1351,6 +1351,11 @@ START: Hero CSS
   display: flex;
   align-items: flex-start;
 }
+@media (min-width: 1200px) and (max-width: 1440px) {
+  .h5-banner-area {
+    padding-top: 110px;
+  }
+}
 
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .h5-banner-area {
