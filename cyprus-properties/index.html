@@ -1366,9 +1366,18 @@
 
         let popupTriggered = false;
 
+        function isAnyPopupOpen() {
+          const formPopup = document.getElementById('popupForm');
+          const brochurePopup = document.getElementById('brochurePopup');
+          const formVisible = formPopup && formPopup.style.display === 'block';
+          const brochureVisible = brochurePopup && brochurePopup.style.display === 'block';
+          return formVisible || brochureVisible;
+        }
+
         function showQuickPopup() {
           if (popupTriggered) return;
-          
+          if (isAnyPopupOpen()) return;
+
           popupTriggered = true;
           
           // Remove event listeners and clear timeouts
