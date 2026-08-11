@@ -1021,9 +1021,9 @@ START: About CSS
   }
 }
 /* @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
-  .tj-faq {
-    padding-top: 40px;
-  }
+.tj-faq {
+padding-top: 40px;
+}
 } */
 /**----------------------------------------
 START: Countup CSS
@@ -1126,7 +1126,7 @@ START: Contact CSS
   position: relative;
 }
 .contact-form .form-input {
-  margin-bottom: 27px;
+  margin-bottom: 15px;
   position: relative;
 }
 .contact-form .form-input select,
@@ -1186,6 +1186,7 @@ START: Contact CSS
 .contact-form .form-input select:focus,
 .contact-form .form-input input[type=tel]:focus,
 .contact-form .form-input input[type=text]:focus,
+.contact-form .form-input textarea:focus,
 .contact-form .form-input input[type=email]:focus {
   border-color: var(--tj-color-theme-dark);
 }
@@ -1936,8 +1937,8 @@ START: CTA Section
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  background-color: #fff;
-  padding: 25px;
+  /* background-color: #fff;
+  padding: 25px; */
   box-shadow: rgba(255, 255, 255, 0.2) 0px 2px 8px 0px;
 }
 
@@ -1949,7 +1950,7 @@ START: CTA Section
 
 @media(min-width: 1200px) {
   .popup-content {
-    width: 40%;
+    width: 28%;
   }
 }
 @media(min-width: 1200px) {
@@ -1974,10 +1975,10 @@ START: CTA Section
   font-size: 40px;
   font-weight: 400;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   cursor: pointer;
-  top: -20px;
-  right: -10px;
+  top: 0;
+  right: 16px;
 }
 .close:hover{
   color: #000;
@@ -2525,8 +2526,8 @@ START: Property Card Buttons - Unified Outline
 }
 
 /* ==========================================================================
-   Property Details Sidebar Drawer CSS
-   ========================================================================== */
+Property Details Sidebar Drawer CSS
+========================================================================== */
 
 /* Outer container to manage visibility & fading */
 .gr-sidebar-drawer {
@@ -3042,9 +3043,9 @@ START: Property Card Buttons - Unified Outline
 }
 
 @media (min-width: 1400px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-        max-width: 1350px;
-    }
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1350px;
+  }
 }
 
 /* Benefits Section WebP Icon Custom Sizing & Color Inversion Filters */
@@ -3058,4 +3059,67 @@ START: Property Card Buttons - Unified Outline
 
 .choose-box:hover .choose-icon img {
   filter: brightness(0) invert(1) !important;
+}
+
+/* WhatsApp icon — teal colour by default, white on hover (all locations) */
+.wa-icon,
+.gr-sidebar-footer .gr-btn-whatsapp img {
+  filter: invert(47%) sepia(16%) saturate(544%) hue-rotate(155deg) brightness(95%) contrast(88%);
+  transition: filter 0.25s ease;
+}
+.gr-btn-whatsapp:hover .wa-icon,
+.gr-sidebar-footer .gr-btn-whatsapp:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Brochure popup textarea — match site input styling */
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+  font-size: 15px;
+  font-family: inherit;
+  color: inherit;
+  resize: none;
+  outline: none;
+  display: block;
+}
+textarea::placeholder { color: #999; }
+
+.form-column .inner-column {
+  background-color: #fff;
+  padding: 40px;
+}
+/* Hero inline form */
+.h5-banner-area {
+  display: block;
+}
+.h5-banner-area .container-fluid {
+  max-width: 1460px;
+  margin: 0 auto;
+  /* padding-inline: 30px; */
+}
+.hero-inline-form {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 8px;
+  padding: 36px 36px 32px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+.hero-form-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--tj-color-theme-dark, #1a2530);
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .hero-inline-form {
+    padding: 24px 20px;
+    margin-top: 32px;
+  }
+  .hero-form-title {
+    font-size: 19px;
+  }
 }

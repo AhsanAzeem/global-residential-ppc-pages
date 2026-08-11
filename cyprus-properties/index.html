@@ -30,36 +30,6 @@
   <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
-  <style>
-    /* WhatsApp icon — teal colour by default, white on hover (all locations) */
-    .wa-icon,
-    .gr-sidebar-footer .gr-btn-whatsapp img {
-      filter: invert(47%) sepia(16%) saturate(544%) hue-rotate(155deg) brightness(95%) contrast(88%);
-      transition: filter 0.25s ease;
-    }
-    .gr-btn-whatsapp:hover .wa-icon,
-    .gr-sidebar-footer .gr-btn-whatsapp:hover img {
-      filter: brightness(0) invert(1);
-    }
-    
-    /* Brochure popup textarea — match site input styling */
-    #brochurePopup textarea {
-      width: 100%;
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      padding: 12px 0;
-      font-size: 15px;
-      font-family: inherit;
-      color: inherit;
-      resize: none;
-      outline: none;
-      display: block;
-    }
-    #brochurePopup textarea::placeholder { color: #999; }
-    #brochurePopup textarea:focus { border-bottom-color: #d1ab6a; }
-  </style>
-  
 </head>
 
 <body>
@@ -120,23 +90,61 @@
       <section class="h5-banner-section">
         <div class="banner-bg">
           <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="assets/video/hero.webm" type="video/webm">
+            <source src="assets/video/hero.webm" type="video/mp4">
           </video>
         </div>
         <div class="h5-banner-area">
-          <div class="h5-banner-content">
-            <h1 class="banner-title text-anim">Invest in Premium<span class="d-lg-block"> Cyprus Property Opportunities</span></h1>
-            <div class="solution-box wow fadeInUp" data-wow-delay=".6s">
-              <p class="desc">
-                Discover carefully selected villas and apartments in Cyprus designed for Middle East investors seeking rental income, long term growth, and international lifestyle opportunities.
-              </p>
-            </div>
-            
-            <div class="btn-area wow fadeInUp" data-wow-delay=".7s">
-              <a class="tj-primary-btn form-trigger" data-heading="Request Investment Details" href="javascript:void(0)">
-                <span class="btn-text"><span>Request Investment Details</span></span>
-                <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
-              </a>
+          <div class="container-fluid">
+            <div class="row justify-content-between">
+              <!-- Left: Text Content -->
+              <div class="col-lg-7">
+                <div class="h5-banner-content">
+                  <h1 class="banner-title text-anim">Invest in Premium<span class="d-lg-block"> Cyprus Property Opportunities</span></h1>
+                  <div class="solution-box wow fadeInUp" data-wow-delay=".6s">
+                    <p class="desc">
+                      Discover carefully selected villas and apartments in Cyprus designed for Middle East investors seeking rental income, long term growth, and international lifestyle opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Right: Inline Form -->
+              <div class="col-lg-4 wow fadeInUp" data-wow-delay=".5s">
+                <div class="hero-inline-form">
+                  <h3 class="hero-form-title">Request Investment Details</h3>
+                  <div class="contact-form">
+                    <form method="post" action="/api/lead" class="contact__form">
+                      <input type="hidden" name="campaign" value="Cyprus Properties">
+                      <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
+                      <input type="hidden" name="leadsource" class="leadsource" value="">
+                      <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+                      <div class="row">
+                        <div class="form-input col-12">
+                          <input type="text" name="full_name" placeholder="Full Name*" required>
+                        </div>
+                        <div class="form-input col-12">
+                          <input type="email" name="email" placeholder="Email Address*" required>
+                        </div>
+                        <div class="form-input col-12">
+                          <input type="tel" id="phoneHero" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
+                          <input type="hidden" name="full_phone_number" value="">
+                          <div id="phone-error-hero" class="phone-error error">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-input col-12">
+                          <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
+                        </div>
+                        <div class="form-input col-12">
+                          <div class="submit-btn">
+                            <button class="tj-primary-btn" type="submit">
+                              <span class="btn-text"><span>Submit Now</span></span>
+                              <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -590,7 +598,7 @@
             <div class="outer-box">
               <!-- <div class="bg bg-image" style="background-image: url(assets/images/shape/section-bg-shape13.png);"></div> -->
               <div class="container">
-                <div class="row">
+                <div class="row justify-content-between">
                   <!-- Content Column -->
                   <div class="content-column col-lg-6 col-xl-6">
                     <div class="inner-column">
@@ -618,7 +626,7 @@
                         </div>
                       </div>
                       <!-- Form Column -->
-                      <div class="form-column col-lg-6 col-xl-6">
+                      <div class="form-column col-lg-4">
                         <div class="inner-column">
                           <h3 class="title mb-3 text-anim">Schedule a Consultation</h3>
                           <div class="contact-form wow fadeInUp" data-wow-delay=".1s">
@@ -628,136 +636,19 @@
                               <input type="hidden" name="leadsource" class="leadsource" value="">
                               <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                               <div class="row">
-                                <div class="form-input col-lg-6 col-md-6">
+                                <div class="form-input col-lg-12">
                                   <input type="text" name="full_name" placeholder="Full Name*" required>
                                 </div>
-                                <div class="form-input col-lg-6 col-md-6">
+                                <div class="form-input col-lg-12">
                                   <input type="email" name="email" placeholder="Email Address*" required>
                                 </div>
-                                <div class="form-input col-lg-6 col-md-6">
+                                <div class="form-input col-lg-12">
                                   <input type="tel" id="phone1" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                                   <input type="hidden" name="full_phone_number" value="">
                                   <div id="phone-error1" class="phone-error error">Please enter a valid phone number</div>
                                 </div>
-                                <div class="form-input col-lg-6 col-md-6">
-                                  <div class="tj-nice-select-box">
-                                    <div class="tj-select">
-                                      <select name="country" required>
-                                        <option value="">Country of Residence*</option>
-                                        <option value="United Arab Emirates">United Arab Emirates</option>
-                                        <option value="Saudi Arabia">Saudi Arabia</option>
-                                        <option value="Kuwait">Kuwait</option>
-                                        <option value="Qatar">Qatar</option>
-                                        <option value="Bahrain">Bahrain</option>
-                                        <option value="Oman">Oman</option>
-                                        <option value="United Kingdom">United Kingdom</option>
-                                        <option value="Germany">Germany</option>
-                                        <option value="France">France</option>
-                                        <option value="Cyprus">Cyprus</option>
-                                        <option value="Greece">Greece</option>
-                                        <option value="Russia">Russia</option>
-                                        <option value="China">China</option>
-                                        <option value="India">India</option>
-                                        <option value="Pakistan">Pakistan</option>
-                                        <option value="Lebanon">Lebanon</option>
-                                        <option value="Jordan">Jordan</option>
-                                        <option value="Egypt">Egypt</option>
-                                        <option value="Nigeria">Nigeria</option>
-                                        <option value="South Africa">South Africa</option>
-                                        <option value="United States">United States</option>
-                                        <option value="Canada">Canada</option>
-                                        <option value="Australia">Australia</option>
-                                        <option value="Afghanistan">Afghanistan</option>
-                                        <option value="Albania">Albania</option>
-                                        <option value="Algeria">Algeria</option>
-                                        <option value="Angola">Angola</option>
-                                        <option value="Argentina">Argentina</option>
-                                        <option value="Armenia">Armenia</option>
-                                        <option value="Austria">Austria</option>
-                                        <option value="Azerbaijan">Azerbaijan</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Belarus">Belarus</option>
-                                        <option value="Belgium">Belgium</option>
-                                        <option value="Bolivia">Bolivia</option>
-                                        <option value="Brazil">Brazil</option>
-                                        <option value="Bulgaria">Bulgaria</option>
-                                        <option value="Cambodia">Cambodia</option>
-                                        <option value="Chile">Chile</option>
-                                        <option value="Colombia">Colombia</option>
-                                        <option value="Croatia">Croatia</option>
-                                        <option value="Czech Republic">Czech Republic</option>
-                                        <option value="Denmark">Denmark</option>
-                                        <option value="Ecuador">Ecuador</option>
-                                        <option value="Ethiopia">Ethiopia</option>
-                                        <option value="Finland">Finland</option>
-                                        <option value="Georgia">Georgia</option>
-                                        <option value="Ghana">Ghana</option>
-                                        <option value="Hungary">Hungary</option>
-                                        <option value="Indonesia">Indonesia</option>
-                                        <option value="Iran">Iran</option>
-                                        <option value="Iraq">Iraq</option>
-                                        <option value="Ireland">Ireland</option>
-                                        <option value="Israel">Israel</option>
-                                        <option value="Italy">Italy</option>
-                                        <option value="Japan">Japan</option>
-                                        <option value="Kazakhstan">Kazakhstan</option>
-                                        <option value="Kenya">Kenya</option>
-                                        <option value="Libya">Libya</option>
-                                        <option value="Malaysia">Malaysia</option>
-                                        <option value="Mexico">Mexico</option>
-                                        <option value="Morocco">Morocco</option>
-                                        <option value="Netherlands">Netherlands</option>
-                                        <option value="New Zealand">New Zealand</option>
-                                        <option value="Norway">Norway</option>
-                                        <option value="Palestine">Palestine</option>
-                                        <option value="Peru">Peru</option>
-                                        <option value="Philippines">Philippines</option>
-                                        <option value="Poland">Poland</option>
-                                        <option value="Portugal">Portugal</option>
-                                        <option value="Romania">Romania</option>
-                                        <option value="Serbia">Serbia</option>
-                                        <option value="Singapore">Singapore</option>
-                                        <option value="Slovakia">Slovakia</option>
-                                        <option value="Somalia">Somalia</option>
-                                        <option value="South Korea">South Korea</option>
-                                        <option value="Spain">Spain</option>
-                                        <option value="Sri Lanka">Sri Lanka</option>
-                                        <option value="Sudan">Sudan</option>
-                                        <option value="Sweden">Sweden</option>
-                                        <option value="Switzerland">Switzerland</option>
-                                        <option value="Syria">Syria</option>
-                                        <option value="Taiwan">Taiwan</option>
-                                        <option value="Tanzania">Tanzania</option>
-                                        <option value="Thailand">Thailand</option>
-                                        <option value="Tunisia">Tunisia</option>
-                                        <option value="Turkey">Turkey</option>
-                                        <option value="Ukraine">Ukraine</option>
-                                        <option value="Uruguay">Uruguay</option>
-                                        <option value="Uzbekistan">Uzbekistan</option>
-                                        <option value="Venezuela">Venezuela</option>
-                                        <option value="Vietnam">Vietnam</option>
-                                        <option value="Yemen">Yemen</option>
-                                        <option value="Zimbabwe">Zimbabwe</option>
-                                        <option value="Other">Other</option>
-                                      </select>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-input col-lg-6 col-md-6">
-                                  <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
-                                </div>
-                                <div class="form-input col-lg-6">
-                                  <div class="tj-nice-select-box">
-                                    <div class="tj-select">
-                                      <select name="interested_development" required>
-                                        <option value="">Interested Development*</option>
-                                        <option value="Harmony Villas">Harmony Villas</option>
-                                        <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
-                                        <option value="Elysia Blu">Elysia Blu</option>
-                                        <option value="Not Sure Yet">Not Sure Yet</option>
-                                      </select>
-                                    </div>
-                                  </div>
+                                <div class="form-input col-lg-12">
+                                  <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
                                 </div>
                                 <div class="form-input col-lg-12">
                                   <div class="submit-btn">
@@ -855,144 +746,19 @@
                     <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
-                      <div class="form-input col-lg-6 col-md-6">
+                      <div class="form-input col-lg-12">
                         <input type="text" name="full_name" placeholder="Full Name*" required>
                       </div>
-                      <div class="form-input col-lg-6 col-md-6">
+                      <div class="form-input col-lg-12">
                         <input type="email" name="email" placeholder="Email Address*" required>
                       </div>
-                      <div class="form-input col-lg-6 col-md-6">
+                      <div class="form-input col-lg-12">
                         <input type="tel" id="phone2" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                         <input type="hidden" name="full_phone_number" value="">
                         <div id="phone-error2" class="phone-error error">Please enter a valid phone number</div>
                       </div>
-                      <div class="form-input col-lg-6 col-md-6">
-                        <div class="tj-nice-select-box">
-                          <div class="tj-select">
-                            <select name="country" required>
-                              <option value="">Country of Residence*</option>
-                              <option value="United Arab Emirates">United Arab Emirates</option>
-                              <option value="Saudi Arabia">Saudi Arabia</option>
-                              <option value="Kuwait">Kuwait</option>
-                              <option value="Qatar">Qatar</option>
-                              <option value="Bahrain">Bahrain</option>
-                              <option value="Oman">Oman</option>
-                              <option value="United Kingdom">United Kingdom</option>
-                              <option value="Germany">Germany</option>
-                              <option value="France">France</option>
-                              <option value="Cyprus">Cyprus</option>
-                              <option value="Greece">Greece</option>
-                              <option value="Russia">Russia</option>
-                              <option value="China">China</option>
-                              <option value="India">India</option>
-                              <option value="Pakistan">Pakistan</option>
-                              <option value="Lebanon">Lebanon</option>
-                              <option value="Jordan">Jordan</option>
-                              <option value="Egypt">Egypt</option>
-                              <option value="Nigeria">Nigeria</option>
-                              <option value="South Africa">South Africa</option>
-                              <option value="United States">United States</option>
-                              <option value="Canada">Canada</option>
-                              <option value="Australia">Australia</option>
-                              <option value="Afghanistan">Afghanistan</option>
-                              <option value="Albania">Albania</option>
-                              <option value="Algeria">Algeria</option>
-                              <option value="Andorra">Andorra</option>
-                              <option value="Angola">Angola</option>
-                              <option value="Argentina">Argentina</option>
-                              <option value="Armenia">Armenia</option>
-                              <option value="Austria">Austria</option>
-                              <option value="Azerbaijan">Azerbaijan</option>
-                              <option value="Bangladesh">Bangladesh</option>
-                              <option value="Belarus">Belarus</option>
-                              <option value="Belgium">Belgium</option>
-                              <option value="Bolivia">Bolivia</option>
-                              <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                              <option value="Brazil">Brazil</option>
-                              <option value="Bulgaria">Bulgaria</option>
-                              <option value="Cambodia">Cambodia</option>
-                              <option value="Cameroon">Cameroon</option>
-                              <option value="Chile">Chile</option>
-                              <option value="Colombia">Colombia</option>
-                              <option value="Croatia">Croatia</option>
-                              <option value="Czech Republic">Czech Republic</option>
-                              <option value="Denmark">Denmark</option>
-                              <option value="Ecuador">Ecuador</option>
-                              <option value="Ethiopia">Ethiopia</option>
-                              <option value="Finland">Finland</option>
-                              <option value="Georgia">Georgia</option>
-                              <option value="Ghana">Ghana</option>
-                              <option value="Hungary">Hungary</option>
-                              <option value="Indonesia">Indonesia</option>
-                              <option value="Iran">Iran</option>
-                              <option value="Iraq">Iraq</option>
-                              <option value="Ireland">Ireland</option>
-                              <option value="Israel">Israel</option>
-                              <option value="Italy">Italy</option>
-                              <option value="Japan">Japan</option>
-                              <option value="Kazakhstan">Kazakhstan</option>
-                              <option value="Kenya">Kenya</option>
-                              <option value="Libya">Libya</option>
-                              <option value="Malaysia">Malaysia</option>
-                              <option value="Mexico">Mexico</option>
-                              <option value="Moldova">Moldova</option>
-                              <option value="Morocco">Morocco</option>
-                              <option value="Mozambique">Mozambique</option>
-                              <option value="Netherlands">Netherlands</option>
-                              <option value="New Zealand">New Zealand</option>
-                              <option value="Norway">Norway</option>
-                              <option value="Palestine">Palestine</option>
-                              <option value="Peru">Peru</option>
-                              <option value="Philippines">Philippines</option>
-                              <option value="Poland">Poland</option>
-                              <option value="Portugal">Portugal</option>
-                              <option value="Romania">Romania</option>
-                              <option value="Serbia">Serbia</option>
-                              <option value="Singapore">Singapore</option>
-                              <option value="Slovakia">Slovakia</option>
-                              <option value="Slovenia">Slovenia</option>
-                              <option value="Somalia">Somalia</option>
-                              <option value="South Korea">South Korea</option>
-                              <option value="Spain">Spain</option>
-                              <option value="Sri Lanka">Sri Lanka</option>
-                              <option value="Sudan">Sudan</option>
-                              <option value="Sweden">Sweden</option>
-                              <option value="Switzerland">Switzerland</option>
-                              <option value="Syria">Syria</option>
-                              <option value="Taiwan">Taiwan</option>
-                              <option value="Tanzania">Tanzania</option>
-                              <option value="Thailand">Thailand</option>
-                              <option value="Tunisia">Tunisia</option>
-                              <option value="Turkey">Turkey</option>
-                              <option value="Turkmenistan">Turkmenistan</option>
-                              <option value="Uganda">Uganda</option>
-                              <option value="Ukraine">Ukraine</option>
-                              <option value="Uruguay">Uruguay</option>
-                              <option value="Uzbekistan">Uzbekistan</option>
-                              <option value="Venezuela">Venezuela</option>
-                              <option value="Vietnam">Vietnam</option>
-                              <option value="Yemen">Yemen</option>
-                              <option value="Zimbabwe">Zimbabwe</option>
-                              <option value="Other">Other</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-input col-lg-6 col-md-6">
-                        <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
-                      </div>
-                      <div class="form-input col-lg-6 col-md-6">
-                        <div class="tj-nice-select-box">
-                          <div class="tj-select">
-                            <select name="interested_development" required>
-                              <option value="">Interested Development*</option>
-                              <option value="Harmony Villas">Harmony Villas</option>
-                              <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
-                              <option value="Elysia Blu">Elysia Blu</option>
-                              <option value="Not Sure Yet">Not Sure Yet</option>
-                            </select>
-                          </div>
-                        </div>
+                      <div class="form-input col-lg-12">
+                        <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
                       </div>
                       <div class="form-input col-lg-12">
                         <div class="submit-btn">
@@ -1161,79 +927,29 @@
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
                       <!-- Full Name -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
+                      <div class="form-input col-12">
                         <input type="text" name="full_name" placeholder="Full Name*" required>
                       </div>
-                      
+
                       <!-- Email -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
+                      <div class="form-input col-12">
                         <input type="email" name="email" placeholder="Email Address*" required>
                       </div>
-                      
+
                       <!-- Phone Number -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
+                      <div class="form-input col-12">
                         <input type="tel" id="phonePopup" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                         <input type="hidden" name="full_phone_number" value="">
                         <div id="phone-error-popup" class="phone-error error">Please enter a valid phone number</div>
                       </div>
-                      
-                      <!-- Country of Residence -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
-                        <div class="tj-nice-select-box">
-                          <div class="tj-select">
-                            <select name="country" required>
-                              <option value="">Country of Residence*</option>
-                              <option value="United Arab Emirates">United Arab Emirates</option>
-                              <option value="Saudi Arabia">Saudi Arabia</option>
-                              <option value="Kuwait">Kuwait</option>
-                              <option value="Qatar">Qatar</option>
-                              <option value="Bahrain">Bahrain</option>
-                              <option value="Oman">Oman</option>
-                              <option value="United Kingdom">United Kingdom</option>
-                              <option value="Germany">Germany</option>
-                              <option value="France">France</option>
-                              <option value="Cyprus">Cyprus</option>
-                              <option value="Greece">Greece</option>
-                              <option value="Russia">Russia</option>
-                              <option value="China">China</option>
-                              <option value="India">India</option>
-                              <option value="Pakistan">Pakistan</option>
-                              <option value="Lebanon">Lebanon</option>
-                              <option value="Jordan">Jordan</option>
-                              <option value="Egypt">Egypt</option>
-                              <option value="Nigeria">Nigeria</option>
-                              <option value="South Africa">South Africa</option>
-                              <option value="United States">United States</option>
-                              <option value="Canada">Canada</option>
-                              <option value="Australia">Australia</option>
-                              <option value="Other">Other</option>
-                            </select>
-                          </div>
-                        </div>
+
+                      <!-- Message -->
+                      <div class="form-input col-12">
+                        <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
                       </div>
-                      
-                      <!-- Investment Budget -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
-                        <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
-                      </div>
-                      
-                      <!-- Interested Development -->
-                      <div class="form-input col-lg-6 col-md-6 col-12">
-                        <div class="tj-nice-select-box">
-                          <div class="tj-select">
-                            <select name="interested_development" required>
-                              <option value="">Interested Development*</option>
-                              <option value="Harmony Villas">Harmony Villas</option>
-                              <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
-                              <option value="Elysia Blu">Elysia Blu</option>
-                              <option value="Not Sure Yet">Not Sure Yet</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                      
+
                       <!-- Submit Button -->
-                      <div class="form-input col-lg-12 col-12">
+                      <div class="form-input col-12">
                         <div class="submit-btn">
                           <button class="tj-primary-btn" type="submit">
                             <span class="btn-text"><span>Submit Now</span></span>
@@ -1576,6 +1292,20 @@
           });
         }
         
+        // intl-tel-input for hero form phone field
+        var phoneHeroInput = document.querySelector('#phoneHero');
+        if (phoneHeroInput) {
+          var itiHero = window.intlTelInput(phoneHeroInput, {
+            utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js',
+            preferredCountries: ['ae', 'sa', 'kw', 'qa', 'bh', 'om'],
+            separateDialCode: true,
+          });
+          phoneHeroInput.closest('form').addEventListener('submit', function() {
+            var hiddenField = this.querySelector('[name="full_phone_number"]');
+            if (hiddenField) hiddenField.value = itiHero.getNumber();
+          });
+        }
+
         // intl-tel-input for quick contact popup form phone field
         var phonePopupInput = document.querySelector('#phonePopup');
         if (phonePopupInput) {
