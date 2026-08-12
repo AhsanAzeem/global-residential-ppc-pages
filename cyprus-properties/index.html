@@ -1380,9 +1380,8 @@
 
           popupTriggered = true;
           
-          // Remove event listeners and clear timeouts
+          // Remove event listeners
           window.removeEventListener('scroll', handleScrollTrigger);
-          clearTimeout(timeTriggerTimeout);
           
           quickPopup.style.display = 'flex';
           setTimeout(() => {
@@ -1403,14 +1402,13 @@
           if (scrollHeight <= 0) return;
           
           const scrollPercent = (window.scrollY / scrollHeight) * 100;
-          if (scrollPercent >= 50) {
+          if (scrollPercent >= 80) {
             showQuickPopup();
           }
         }
 
         // Set triggers
         window.addEventListener('scroll', handleScrollTrigger);
-        const timeTriggerTimeout = setTimeout(showQuickPopup, 8000); // 12 seconds fallback
 
         // Close handlers
         quickCloseBtn.addEventListener('click', closeQuickPopup);
