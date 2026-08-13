@@ -37,21 +37,6 @@
 		}
 	});
 	
-	/* ------------- Gsap registration Js -------------*/
-	gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
-	if ($("#smooth-wrapper").length && $("#smooth-content").length) {
-		gsap.config({
-			nullTargetWarn: false,
-		});
-		
-		let smoother = ScrollSmoother.create({
-			smooth: 1.5,
-			effects: true,
-			smoothTouch: 0.1,
-			ignoreMobileResize: true,
-		});
-	}
-	
 	////////////////////////////////////////////////////
 	// Data js
 	$("[data-bg-image]").each(function () {
@@ -276,13 +261,30 @@
 	////////////////////////////////////////////////////
 	// Odometer js
 	if (jQuery(".odometer").length > 0) {
-		var om = jQuery(".odometer");
-		om.each(function () {
-			jQuery(this).appear(function () {
-				var numCount = jQuery(this).attr("data-count");
-				jQuery(this).html(numCount);
+		if ('IntersectionObserver' in window) {
+			const observer = new IntersectionObserver((entries, observer) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						const el = entry.target;
+						const numCount = el.getAttribute("data-count");
+						el.innerHTML = numCount;
+						observer.unobserve(el);
+					}
+				});
+			}, { threshold: 0.1 });
+			
+			document.querySelectorAll(".odometer").forEach(el => {
+				observer.observe(el);
 			});
-		});
+		} else {
+			var om = jQuery(".odometer");
+			om.each(function () {
+				jQuery(this).appear(function () {
+					var numCount = jQuery(this).attr("data-count");
+					jQuery(this).html(numCount);
+				});
+			});
+		}
 	}
 	
 	////////////////////////////////////////////////////
@@ -432,6 +434,9 @@
 	
 	/* ------------- Gsap Animation Js -------------*/
 	function gsapController() {
+		if (typeof gsap === "undefined") {
+			return;
+		}
 		// common variable and funtion
 		let mediaMatch = gsap.matchMedia();
 		function rtlValue(value) {
