@@ -1319,7 +1319,6 @@ START: Choose CSS
 START: Hero CSS
 ----------------------------------------*/
 .h5-banner-section {
-  background-color: var(--tj-color-theme-dark);
   /* border-radius: 12px; */
   position: relative;
   overflow: hidden;
