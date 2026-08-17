@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="assets/css/animate.min.css">
   <link rel="stylesheet" href="assets/css/bexon-icons.css">
   <link rel="stylesheet" href="assets/css/swiper.min.css">
-  <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
+  <!-- <link rel="stylesheet" href="assets/css/odometer-theme-default.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
@@ -67,8 +67,8 @@
                   </span>
                   <span class="call-text d-none d-xl-inline-flex">+971 58 584 7043</span>
                 </a> -->
-                <a class="tj-primary-btn form-trigger d-none d-lg-flex" data-heading="Contact Us" href="javascript:void(0)">
-                  <span class="btn-text"><span>Contact Us</span></span>
+                <a class="tj-primary-btn form-trigger d-none d-lg-flex" data-heading="Get a Free Consultation" href="javascript:void(0)">
+                  <span class="btn-text"><span>Get a Free Consultation</span></span>
                   <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                 </a>
               </div>
@@ -87,24 +87,30 @@
   <div id="smooth-content">
     <main id="primary" class="site-main">
       <!-- start: Banner Section -->
-      <section class="h5-banner-section">
-        <div class="banner-bg">
+      <section class="h5-banner-section bg-cover" style="background-image: url(assets/images/hero/hero.webp);">
+        <!-- <div class="banner-bg">
           <video class="hero-video-bg" autoplay muted loop playsinline>
             <source src="assets/video/hero.webm" type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <div class="h5-banner-area">
           <div class="container-fluid">
             <div class="row justify-content-between">
               <!-- Left: Text Content -->
               <div class="col-lg-7">
                 <div class="h5-banner-content">
-                  <h1 class="banner-title text-anim">Invest in Premium<span class="d-lg-block"> Cyprus Property Opportunities</span></h1>
+                  <h1 class="banner-title text-anim">Secure Your Future with<span class="d-lg-block"> Luxury Cyprus Real Estate</span></h1>
                   <div class="solution-box">
                     <p class="desc">
-                      Discover carefully selected villas and apartments in Cyprus designed for Middle East investors seeking rental income, long term growth, and international lifestyle opportunities.
+                      Carefully selected properties designed for maximum ROI and a premium European lifestyle. Step into a world of high returns and global mobility with trusted experts.
                     </p>
                   </div>
+                  <ul class="banner-benefits">
+                    <li><span class="benefit-icon"><i class="tji-check"></i></span>Premium Properties Starting from &euro;275K</li>
+                    <li><span class="benefit-icon"><i class="tji-check"></i></span>25+ Years of Industry Excellence</li>
+                    <li><span class="benefit-icon"><i class="tji-check"></i></span>Dedicated Mortgage &amp; Financing Assistance</li>
+                    <li><span class="benefit-icon"><i class="tji-check"></i></span>Unlock Golden Visa Opportunities</li>
+                  </ul>
                 </div>
               </div>
               <!-- Right: Inline Form -->
@@ -135,7 +141,7 @@
                         <div class="form-input col-12">
                           <div class="submit-btn">
                             <button class="tj-primary-btn" type="submit">
-                              <span class="btn-text"><span>Submit Now</span></span>
+                              <span class="btn-text"><span>Get Investment Details</span></span>
                               <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                             </button>
                           </div>
@@ -208,7 +214,7 @@
                         <span class="btn-text"><span>Request Investment Details</span></span>
                         <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                       </a>
-                      <a class="tj-primary-btn btn-dark form-trigger" href="javascript:void(0)" data-heading="Request Investment Details">
+                      <a class="tj-primary-btn btn-dark form-trigger" href="javascript:void(0)" data-heading="Speak With An Advisor">
                         <span class="btn-text"><span>Speak With An Advisor</span></span>
                         <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                       </a>
@@ -965,16 +971,15 @@
         </div>
       </div>
       
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/swiper.min.js"></script>
-      <script src="assets/js/odometer.min.js"></script>
-      <script src="assets/js/appear.min.js"></script>
-      <script src="assets/js/wow.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-      <script src="assets/js/main.js"></script>
+      <script src="assets/js/jquery.min.js" defer></script>
+      <script src="assets/js/swiper.min.js" defer></script>
+      <script src="assets/js/wow.min.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js" defer></script>
+      <script src="assets/js/main.js" defer></script>
       
       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
         // Property card image sliders
         document.querySelectorAll('.gr-property-swiper').forEach(function(el) {
           new Swiper(el, {
@@ -1414,6 +1419,8 @@
             closeQuickPopup();
           }
         });
+
+        }); // end DOMContentLoaded
       </script>
       
     </body>

@@ -1318,6 +1318,11 @@ START: Choose CSS
 /**----------------------------------------
 START: Hero CSS
 ----------------------------------------*/
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 .h5-banner-section {
   /* border-radius: 12px; */
   position: relative;
@@ -1349,7 +1354,7 @@ START: Hero CSS
   padding-top: 115px;
   padding-bottom: 150px;
   display: flex;
-  align-items: flex-start;
+  align-items: end;
 }
 @media (min-width: 1200px) and (max-width: 1440px) {
   .h5-banner-area {
@@ -1416,7 +1421,7 @@ START: Hero CSS
   line-height: 1.2;
   margin-bottom: 30px;
 }
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+@media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .h5-banner-content .banner-title {
     font-size: 44px;
   }
@@ -1453,18 +1458,33 @@ START: Hero CSS
   z-index: -1;
 }
 
-@media only screen and (max-width: 991px) {
-  .banner-bg::after {
-    content: "";
-    position: absolute;
-    inset: 0;
+/* Readability wash over the hero background image.
+   Sits above the section background, below .h5-banner-area (z-index 2). */
+.h5-banner-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+  to bottom,
+  rgba(255, 255, 255, 0.97) 0%,
+  rgba(255, 255, 255, 0.82) 45%,
+  rgba(255, 255, 255, 0.8) 100%
+  );
+}
+
+/* Left-to-right wash behind the hero copy (desktop/tablet) */
+@media only screen and (min-width: 992px) {
+  .h5-banner-section::before {
     background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0.48) 50%,
-    rgba(255, 255, 255, 0.52) 100%
+    to right,
+    rgba(255, 255, 255, 0.97) 0%,
+    rgba(255, 255, 255, 0.92) 28%,
+    rgba(255, 255, 255, 0.62) 52%,
+    rgba(255, 255, 255, 0.2) 72%,
+    rgba(255, 255, 255, 0) 88%
     );
-    z-index: 1;
   }
 }
 
@@ -3092,9 +3112,9 @@ textarea::placeholder { color: #999; }
   padding: 40px;
 }
 /* Hero inline form */
-.h5-banner-area {
+/* .h5-banner-area {
   display: block;
-}
+} */
 .h5-banner-area .container-fluid {
   max-width: 1460px;
   margin: 0 auto;
@@ -3120,5 +3140,56 @@ textarea::placeholder { color: #999; }
   }
   .hero-form-title {
     font-size: 19px;
+  }
+}
+
+/* Hero benefit list */
+.banner-benefits {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 560px;
+}
+.banner-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--tj-color-theme-dark-2, #18292c);
+  margin-bottom: 14px;
+}
+.banner-benefits li:last-child {
+  margin-bottom: 0;
+}
+.banner-benefits .benefit-icon {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background-color: var(--tj-color-theme-primary, #c2b04d);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+.h5-banner-area .solution-box {
+  margin-bottom: 28px;
+}
+@media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
+  .banner-benefits li {
+    font-size: 15px;
+    margin-bottom: 11px;
+  }
+  .banner-benefits .benefit-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+  .h5-banner-area .solution-box {
+    margin-bottom: 22px;
   }
 }
