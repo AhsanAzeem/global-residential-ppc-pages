@@ -1404,7 +1404,7 @@ START: Hero CSS
 }
 @media only screen and (min-width: 576px) and (max-width: 767px), (max-width: 575px) {
   .h5-banner-area {
-    padding: 140px 12px 15px;
+    padding: 110px 12px 15px;
     min-height: 65vh;
   }
 }
@@ -2947,7 +2947,6 @@ Property Details Sidebar Drawer CSS
   display: flex;
   align-items: center;
 }
-
 .gr-lead-popup-close {
   position: absolute;
   top: 20px;
@@ -2961,11 +2960,9 @@ Property Details Sidebar Drawer CSS
   padding: 5px;
   transition: color 0.2s;
 }
-
 .gr-lead-popup-close:hover {
   color: #1a2e35;
 }
-
 .gr-lead-popup-badge {
   display: inline-block;
   font-size: 11px;
@@ -3058,6 +3055,9 @@ Property Details Sidebar Drawer CSS
   .gr-lead-popup-desc {
     font-size: 13.5px;
     margin-bottom: 24px;
+  }
+  .gr-lead-popup-content h3 {
+    font-size: 20px !important;
   }
 }
 
