@@ -1435,17 +1435,17 @@ START: Hero CSS
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .h5-banner-content .banner-title {
     max-width: 560px;
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   .h5-banner-content .banner-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 @media (max-width: 575px) {
   .h5-banner-content .banner-title {
-    font-size: 30px;
+    font-size: 26px;
   }
 }
 .banner-bg {
