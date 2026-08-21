@@ -95,7 +95,7 @@
         </div> -->
         <div class="h5-banner-area">
           <div class="container-fluid">
-            <div class="row justify-content-between">
+            <div class="row align-items-center justify-content-between">
               <!-- Left: Text Content -->
               <div class="col-lg-7">
                 <div class="h5-banner-content">
@@ -121,7 +121,7 @@
                     <form method="post" action="/api/lead" class="contact__form">
                       <input type="hidden" name="campaign" value="Cyprus Properties">
                       <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
-                      <input type="hidden" name="leadsource" class="leadsource" value="">
+                      <input type="hidden" name="leadsource" class="leadsource" value="Hero Form">
                       <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                       <div class="row">
                         <div class="form-input col-12">
@@ -134,6 +134,22 @@
                           <input type="tel" id="phoneHero" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                           <input type="hidden" name="full_phone_number" value="">
                           <div id="phone-error-hero" class="phone-error error">Please enter a valid phone number</div>
+                        </div>
+                        <div class="form-input col-12">
+                          <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
+                        </div>
+                        <div class="form-input col-12">
+                          <div class="tj-nice-select-box">
+                            <div class="tj-select">
+                              <select name="interested_development" required>
+                                <option value="">Interested Development*</option>
+                                <option value="Harmony Villas">Harmony Villas</option>
+                                <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                                <option value="Elysia Blu">Elysia Blu</option>
+                                <option value="Not Sure Yet">Not Sure Yet</option>
+                              </select>
+                            </div>
+                          </div>
                         </div>
                         <div class="form-input col-12">
                           <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
@@ -214,7 +230,7 @@
                         <span class="btn-text"><span>Request Investment Details</span></span>
                         <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                       </a>
-                      <a class="tj-primary-btn btn-dark form-trigger" href="javascript:void(0)" data-heading="Speak With An Advisor">
+                      <a class="tj-primary-btn btn-dark form-trigger" href="javascript:void(0)" data-heading="Speak With An Advisor" data-form="short">
                         <span class="btn-text"><span>Speak With An Advisor</span></span>
                         <span class="btn-icon"><i class="tji-arrow-right-long"></i></span>
                       </a>
@@ -455,8 +471,7 @@
                   </a>
                 </div>
               </div>
-              
-              
+
             </div>
           </div>
         </section>
@@ -631,26 +646,42 @@
                         </div>
                       </div>
                       <!-- Form Column -->
-                      <div class="form-column col-lg-4">
+                      <div class="form-column col-lg-6">
                         <div class="inner-column">
                           <h3 class="title mb-3 text-anim">Schedule a Consultation</h3>
                           <div class="contact-form wow fadeInUp" data-wow-delay=".1s">
                             <form method="post" action="/api/lead" class="contact__form">
                               <input type="hidden" name="campaign" value="Cyprus Properties">
                               <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
-                              <input type="hidden" name="leadsource" class="leadsource" value="">
+                              <input type="hidden" name="leadsource" class="leadsource" value="Schedule a Consultation">
                               <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                               <div class="row">
-                                <div class="form-input col-lg-12">
+                                <div class="form-input col-lg-6 col-md-6">
                                   <input type="text" name="full_name" placeholder="Full Name*" required>
                                 </div>
-                                <div class="form-input col-lg-12">
+                                <div class="form-input col-lg-6 col-md-6">
                                   <input type="email" name="email" placeholder="Email Address*" required>
                                 </div>
-                                <div class="form-input col-lg-12">
+                                <div class="form-input col-lg-6 col-md-6">
                                   <input type="tel" id="phone1" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                                   <input type="hidden" name="full_phone_number" value="">
                                   <div id="phone-error1" class="phone-error error">Please enter a valid phone number</div>
+                                </div>
+                                <div class="form-input col-lg-6 col-md-6">
+                                  <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
+                                </div>
+                                <div class="form-input col-lg-12">
+                                  <div class="tj-nice-select-box">
+                                    <div class="tj-select">
+                                      <select name="interested_development" required>
+                                        <option value="">Interested Development*</option>
+                                        <option value="Harmony Villas">Harmony Villas</option>
+                                        <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                                        <option value="Elysia Blu">Elysia Blu</option>
+                                        <option value="Not Sure Yet">Not Sure Yet</option>
+                                      </select>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-input col-lg-12">
                                   <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
@@ -695,8 +726,7 @@
             <!-- end: Footer Section -->
           </div>
         </div>
-        
-        
+
         <!-- Sticky Phone and WhatsApp -->
         <!-- <div class="contact-container">
           <div class="call-us">
@@ -737,8 +767,7 @@
             </a>
           </div>
         </div> -->
-        
-        
+
         <!-- Start Form Popup -->
         <div id="popupForm" class="popup">
           <div class="popup-content contact-section"><span class="close">&times;</span>
@@ -749,6 +778,7 @@
                   <form method="post" action="/api/lead" class="contact__form">
                     <input type="hidden" name="campaign" value="Cyprus Properties">
                     <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
+                    <input type="hidden" name="leadsource" class="leadsource" value="">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
                       <div class="form-input col-lg-12">
@@ -761,6 +791,22 @@
                         <input type="tel" id="phone2" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                         <input type="hidden" name="full_phone_number" value="">
                         <div id="phone-error2" class="phone-error error">Please enter a valid phone number</div>
+                      </div>
+                      <div class="form-input col-lg-6 col-md-6">
+                        <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
+                      </div>
+                      <div class="form-input col-lg-6 col-md-6">
+                        <div class="tj-nice-select-box">
+                          <div class="tj-select">
+                            <select name="interested_development" required>
+                              <option value="">Interested Development*</option>
+                              <option value="Harmony Villas">Harmony Villas</option>
+                              <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                              <option value="Elysia Blu">Elysia Blu</option>
+                              <option value="Not Sure Yet">Not Sure Yet</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                       <div class="form-input col-lg-12">
                         <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
@@ -935,12 +981,12 @@
                       <div class="form-input col-12">
                         <input type="text" name="full_name" placeholder="Full Name*" required>
                       </div>
-
+                      
                       <!-- Email -->
                       <div class="form-input col-12">
                         <input type="email" name="email" placeholder="Email Address*" required>
                       </div>
-
+                      
                       <!-- Phone Number -->
                       <div class="form-input col-12">
                         <input type="tel" id="phonePopup" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
@@ -1361,6 +1407,38 @@
         });
 
         // Premium Quick Contact Popup Trigger Logic
+        // popupForm variant: triggers with data-form="short" hide the qualifying
+        // fields, turning the shared popup into the 4-field form.
+        (function () {
+          const popupForm = document.getElementById('popupForm');
+          if (!popupForm) return;
+          const qualifiers = popupForm.querySelectorAll('[name="investment_budget"], [name="interested_development"]');
+
+          function setPopupVariant(isShort) {
+            qualifiers.forEach(function (field) {
+              const wrap = field.closest('.form-input');
+              if (wrap) wrap.style.display = isShort ? 'none' : '';
+              if (isShort) {
+                // a hidden field must not stay required, or submit silently fails
+                field.removeAttribute('required');
+                field.value = '';
+              } else {
+                field.setAttribute('required', 'required');
+              }
+            });
+          }
+
+          const sourceField = popupForm.querySelector('[name="leadsource"]');
+
+          document.querySelectorAll('.form-trigger').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              setPopupVariant(this.dataset.form === 'short');
+              // record which CTA opened the popup, so the lead email can say
+              if (sourceField) sourceField.value = this.dataset.heading || '';
+            });
+          });
+        })();
+
         const quickPopup = document.getElementById('quickContactPopup');
         const quickCloseBtn = document.getElementById('quickContactCloseBtn');
         const quickOverlay = quickPopup.querySelector('.gr-lead-popup-overlay');
