@@ -287,7 +287,7 @@
                       <a href="javascript:void(0)" class="gr-btn gr-btn-primary view-details-trigger" data-property="harmony-villas">Read More</a>
                       <a href="javascript:void(0)" class="gr-btn gr-btn-outline brochure-trigger" data-property="harmony-villas" data-brochure="Harmony_Villas_Brochure.pdf" data-name="Harmony Villas">Request Brochure</a>
                       <!-- <a href="https://api.whatsapp.com/send/?phone=971585847043&text=Hi%2C%20I%27m%20interested%20in%20Harmony%20Villas%20in%20Paralimni%2C%20Cyprus.%20Please%20send%20me%20more%20details." class="gr-btn gr-btn-whatsapp" rel="noopener"><img src="assets/images/icons/whatsapp-dark.webp" alt="" class="wa-icon" style="width:16px;height:16px;"> WhatsApp</a> -->
-                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Harmony Villas">Book Consultation</a>
+                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Harmony Villas" data-development="Harmony Villas">Book Consultation</a>
                     </div>
                   </div>
                 </div>
@@ -321,7 +321,7 @@
                       <a href="javascript:void(0)" class="gr-btn gr-btn-primary view-details-trigger" data-property="hidden-gem">Read More</a>
                       <a href="javascript:void(0)" class="gr-btn gr-btn-outline brochure-trigger" data-property="hidden-gem" data-brochure="Hidden_Gem_Brochure.pdf" data-name="Hidden Gem Apartments">Request Brochure</a>
                       <!-- <a href="https://api.whatsapp.com/send/?phone=971585847043&text=Hi%2C%20I%27m%20interested%20in%20Hidden%20Gem%20Apartments%20in%20Paralimni%2C%20Cyprus.%20Please%20send%20me%20more%20details." class="gr-btn gr-btn-whatsapp" rel="noopener"><img src="assets/images/icons/whatsapp-dark.webp" alt="" class="wa-icon" style="width:16px;height:16px;"> WhatsApp</a> -->
-                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Hidden Gem Apartments">Book Consultation</a>
+                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Hidden Gem Apartments" data-development="Hidden Gem Apartments">Book Consultation</a>
                     </div>
                   </div>
                 </div>
@@ -363,7 +363,7 @@
                       <a href="javascript:void(0)" class="gr-btn gr-btn-primary view-details-trigger" data-property="elysia-blu">Read More</a>
                       <a href="javascript:void(0)" class="gr-btn gr-btn-outline brochure-trigger" data-property="elysia-blu" data-brochure="elysia_blu_brochure.pdf" data-name="Elysia Blu">Request Brochure</a>
                       <!-- <a href="https://api.whatsapp.com/send/?phone=971585847043&text=Hi%2C%20I%27m%20interested%20in%20Elysia%20Blu%20in%20Paphos%2C%20Cyprus.%20Please%20send%20me%20more%20details." class="gr-btn gr-btn-whatsapp" rel="noopener"><img src="assets/images/icons/whatsapp-dark.webp" alt="" class="wa-icon" style="width:16px;height:16px;"> WhatsApp</a> -->
-                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Elysia Blu">Book Consultation</a>
+                      <a href="javascript:void(0)" class="gr-btn gr-btn-dark form-trigger" data-heading="Book Consultation About Elysia Blu" data-development="Elysia Blu">Book Consultation</a>
                     </div>
                   </div>
                 </div>
@@ -649,7 +649,7 @@
                       <div class="form-column col-lg-6">
                         <div class="inner-column">
                           <h3 class="title mb-3 text-anim">Schedule a Consultation</h3>
-                          <div class="contact-form wow fadeInUp" data-wow-delay=".1s">
+                          <div class="contact-form">
                             <form method="post" action="/api/lead" class="contact__form">
                               <input type="hidden" name="campaign" value="Cyprus Properties">
                               <input type="hidden" name="redirect_to" value="/cyprus-properties/thank-you.html">
@@ -662,7 +662,7 @@
                                 <div class="form-input col-lg-6 col-md-6">
                                   <input type="email" name="email" placeholder="Email Address*" required>
                                 </div>
-                                <div class="form-input col-lg-6 col-md-6">
+                                <div class="form-input col-lg-12 col-md-12">
                                   <input type="tel" id="phone1" name="phone_number" placeholder="Phone Number / WhatsApp*" required>
                                   <input type="hidden" name="full_phone_number" value="">
                                   <div id="phone-error1" class="phone-error error">Please enter a valid phone number</div>
@@ -670,7 +670,7 @@
                                 <div class="form-input col-lg-6 col-md-6">
                                   <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
                                 </div>
-                                <div class="form-input col-lg-12">
+                                <div class="form-input col-lg-6 col-md-6">
                                   <div class="tj-nice-select-box">
                                     <div class="tj-select">
                                       <select name="interested_development" required>
@@ -781,10 +781,10 @@
                     <input type="hidden" name="leadsource" class="leadsource" value="">
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
-                      <div class="form-input col-lg-12">
+                      <div class="form-input col-lg-6">
                         <input type="text" name="full_name" placeholder="Full Name*" required>
                       </div>
-                      <div class="form-input col-lg-12">
+                      <div class="form-input col-lg-6">
                         <input type="email" name="email" placeholder="Email Address*" required>
                       </div>
                       <div class="form-input col-lg-12">
@@ -841,16 +841,33 @@
                   <input type="hidden" name="redirect_to" value="/cyprus-properties/brochure-downloaded.html">
                   <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                   <div class="row">
-                    <div class="form-input col-lg-12">
+                    <div class="form-input col-6">
                       <input type="text" name="full_name" placeholder="Full Name*" required>
                     </div>
-                    <div class="form-input col-lg-12">
+                    <div class="form-input col-6">
                       <input type="email" name="email" placeholder="Email Address*" required>
                     </div>
-                    <div class="form-input col-lg-12">
+                    <div class="form-input col-12">
                       <input type="tel" id="phone3" name="phone_number" placeholder="Phone Number*" required>
                       <input type="hidden" name="full_phone_number" value="">
                       <div id="phone-error3" class="phone-error error">Please enter a valid phone number</div>
+                    </div>
+                    <div class="form-input col-6">
+                      <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
+                    </div>
+
+                    <div class="form-input col-6">
+                      <div class="tj-nice-select-box">
+                        <div class="tj-select">
+                          <select name="interested_development" required>
+                            <option value="">Interested Development*</option>
+                            <option value="Harmony Villas">Harmony Villas</option>
+                            <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                            <option value="Elysia Blu">Elysia Blu</option>
+                            <option value="Not Sure Yet">Not Sure Yet</option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
                     <div class="form-input col-lg-12">
                       <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
@@ -978,12 +995,12 @@
                     <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
                     <div class="row">
                       <!-- Full Name -->
-                      <div class="form-input col-12">
+                      <div class="form-input col-6">
                         <input type="text" name="full_name" placeholder="Full Name*" required>
                       </div>
                       
                       <!-- Email -->
-                      <div class="form-input col-12">
+                      <div class="form-input col-6">
                         <input type="email" name="email" placeholder="Email Address*" required>
                       </div>
                       
@@ -994,6 +1011,25 @@
                         <div id="phone-error-popup" class="phone-error error">Please enter a valid phone number</div>
                       </div>
 
+                      <!-- Investment Budget -->
+                      <div class="form-input col-6">
+                        <input type="text" name="investment_budget" placeholder="Investment Budget*" required>
+                      </div>
+
+                      <!-- Interested Development -->
+                      <div class="form-input col-6">
+                        <div class="tj-nice-select-box">
+                          <div class="tj-select">
+                            <select name="interested_development" required>
+                              <option value="">Interested Development*</option>
+                              <option value="Harmony Villas">Harmony Villas</option>
+                              <option value="Hidden Gem Apartments">Hidden Gem Apartments</option>
+                              <option value="Elysia Blu">Elysia Blu</option>
+                              <option value="Not Sure Yet">Not Sure Yet</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                       <!-- Message -->
                       <div class="form-input col-12">
                         <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
@@ -1295,6 +1331,7 @@
         const brochureTitle = brochurePopup.querySelector('h3');
         const brochureRedirectInput = brochurePopup.querySelector('[name="redirect_to"]');
         const brochureCampaignInput = brochurePopup.querySelector('[name="campaign"]');
+        const brochureDevelopmentInput = brochurePopup.querySelector('[name="interested_development"]');
         
         document.querySelectorAll('.brochure-trigger').forEach(function(btn) {
           btn.addEventListener('click', function(e) {
@@ -1306,6 +1343,14 @@
             brochureTitle.textContent = 'Request the ' + propertyName + ' Brochure';
             // Update campaign field
             if (brochureCampaignInput) brochureCampaignInput.value = propertyName + ' Brochure';
+            // Preselect the development matching the requested brochure
+            if (brochureDevelopmentInput) {
+              const hasOption = Array.prototype.some.call(
+                brochureDevelopmentInput.options,
+                function (opt) { return opt.value === propertyName; }
+              );
+              brochureDevelopmentInput.value = hasOption ? propertyName : '';
+            }
             // Set redirect with property slug so thank-you page can trigger the download
             if (brochureRedirectInput) brochureRedirectInput.value = '/cyprus-properties/brochure-downloaded.html?property=' + propertySlug;
             brochurePopup.style.display = 'block';
@@ -1429,12 +1474,23 @@
           }
 
           const sourceField = popupForm.querySelector('[name="leadsource"]');
+          const developmentField = popupForm.querySelector('[name="interested_development"]');
 
           document.querySelectorAll('.form-trigger').forEach(function (btn) {
             btn.addEventListener('click', function () {
               setPopupVariant(this.dataset.form === 'short');
               // record which CTA opened the popup, so the lead email can say
               if (sourceField) sourceField.value = this.dataset.heading || '';
+              // preselect the development when the CTA names one; clear it
+              // otherwise, so a previous selection can't carry over
+              if (developmentField) {
+                const wanted = this.dataset.development || '';
+                const hasOption = Array.prototype.some.call(
+                  developmentField.options,
+                  function (opt) { return opt.value === wanted; }
+                );
+                developmentField.value = hasOption ? wanted : '';
+              }
             });
           });
         })();
